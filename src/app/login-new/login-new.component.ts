@@ -11,32 +11,31 @@ import {AuthService} from '../core/auth.service'
   styleUrls: ['./login-new.component.scss']
 })
 export class LoginNewComponent implements OnInit {
-  userName:any;
+  username:any;
   password:any;
   loginForm: FormGroup;
+  userdata:any;
   constructor(public router: Router,private formBuilder:FormBuilder,public http: HttpClient,public authService: AuthService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      userName:['',Validators.required],
+      username:['',Validators.required],
       password:['',Validators.required]
     })
   }
   onLoggedin() {
     let loginData ={
-        userName : this.loginForm.value.userName,
+        username : this.loginForm.value.username,
         password:this.loginForm.value.password,
         }
-        console.log(loginData)
-        if(this.loginForm.value.userName =="" || this.loginForm.value ==""){
+        if(this.loginForm.value.username =="" || this.loginForm.value ==""){
           alert("Please enter user name and password")
         }
-        else if(this.loginForm.value.userName !="" || this.loginForm.value !=""){
+        else if(this.loginForm.value.username !="" || this.loginForm.value !=""){
         this.authService.login(loginData).subscribe(data =>{
-        console.log(data);
-        //  this.router.navigate(['/signup'])
-      
-       this.router.navigate(['/demo'])
+              this.userdata = data['user'].role;
+              localStorage.setItem('role',this.userdata);
+              this.router.navigate(['/dashboard'])
           })
         }
         else {

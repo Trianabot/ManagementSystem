@@ -5,15 +5,17 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
-
-
 import { LoginComponent } from './views/login/login.component';
+import {EmployeeComponent} from './views/employee/employee.component';
+import {DesignationComponent} from './views/designation/designation.component';
+import {DepartmentComponent} from './views/department/department.component';
+import {ShiftComponent} from './views/shift/shift.component';
+import {AdddepartmentComponent} from './views/department/adddepartment/adddepartment.component'
 
 
 export const routes: Routes = [
  
- 
-  
+
   {
     path: 'login',
     component: LoginComponent,
@@ -21,13 +23,6 @@ export const routes: Routes = [
       title: 'Login Page'
     }
   },
-  // {
-  //   path: 'demo',
-  //   component: DemoComponent,
-  //   data: {
-  //     title: 'Login Page'
-  //   }
-  // },
   { path: '', component: LoginNewComponent,
   pathMatch: 'full', },
  
@@ -38,15 +33,33 @@ export const routes: Routes = [
       title: 'Home'
     },
     children: [
-
-     
-     
-     
-     
-      
       {
         path: 'demo',
         component: DemoComponent
+      },
+      {
+        path: 'dashboard',
+        loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+      },
+      {
+        path:'employee',
+        component:EmployeeComponent
+      },
+      {
+        path: 'designation',
+        component: DesignationComponent
+      },
+      {
+        path: 'department',
+        component:DepartmentComponent
+      },
+      {
+        path: 'shift',
+        component:ShiftComponent
+      },
+      {
+        path: 'department/adddepartment',
+        component:AdddepartmentComponent
       }
     ]
   },

@@ -1,0 +1,88 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header">
+            <strong>Add Department</strong>
+            <small>Form</small>
+            <button class="btn btn-primary" style="float:right"> <a [routerLink]="['/department']"> Departments </a> </button>
+          </div>
+          <div class="card-body">
+            <form #departmentForm="ngForm" (ngSubmit)="addDepartment(departmentForm)"> 
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="name">Department Name</label>
+                  <input type="text" class="form-control" id="departmentName" name="departmentName" #departmentName="ngModel"
+                  [(ngModel)]="departmentSerice.selectedDepartment.departmentName" placeholder="Enter department name">
+                </div>
+              </div>
+            </div><!--/.row-->
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber"> Contact Person </label>
+                  <input type="text" class="form-control" id="contactPerson" name="contactPerson" #departmentName="ngModel"
+                  [(ngModel)]="departmentSerice.selectedDepartment.contactPerson" placeholder="Contact Person name">
+                </div>
+              </div>
+            </div><!--/.row-->
+            <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="ccnumber">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" #departmentName="ngModel"
+                    [(ngModel)]="departmentSerice.selectedDepartment.phone" placeholder="Phone Number">
+                  </div>
+                </div>
+            </div><!--/.row-->
+            <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="ccnumber"> Email </label>
+                    <input type="text" class="form-control" id="email" name="email" #departmentName="ngModel"
+                    [(ngModel)]="departmentSerice.selectedDepartment.email" placeholder="Email">
+                  </div>
+                </div>
+            </div><!--/.row-->
+            <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="ccnumber"> Username </label>
+                    <input type="text" class="form-control" id="username" id="username" name="username" #departmentName="ngModel"
+                    [(ngModel)]="departmentSerice.selectedDepartment.username" placeholder="Username">
+                  </div>
+                </div>
+            </div><!--/.row-->
+            <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="ccnumber"> Password </label>
+                    <input type="password" class="form-control" id="password" name="password" #departmentName="ngModel"
+                    [(ngModel)]="departmentSerice.selectedDepartment.password" placeholder="Password">
+                  </div>
+                </div>
+            </div><!--/.row-->
+            <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="ccnumber"> Role </label>
+                    <input type="text" class="form-control" id="role" name="role" #departmentName="ngModel"
+                    [(ngModel)]="departmentSerice.selectedDepartment.role" placeholder="Role">
+                  </div>
+                </div>
+            </div><!--/.row-->
+            <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="Submit">
+                  </div>
+                </div>
+            </div><!--/.row-->
+          </form>                       
+          </div>
+        </div>
+      </div><!--/.col-->
+    
+    </div><!--/.row-->
+  </div>

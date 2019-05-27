@@ -41,6 +41,11 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { LoginNewComponent } from './login-new/login-new.component';
 import { DemoComponent } from './views/demo/demo.component';
+import { EmployeeComponent } from './views/employee/employee.component';
+import { DesignationComponent } from './views/designation/designation.component';
+import { DepartmentComponent } from './views/department/department.component';
+import { ShiftComponent } from './views/shift/shift.component';
+import { AdddepartmentComponent } from './views/department/adddepartment/adddepartment.component';
 
 @NgModule({
   imports: [
@@ -66,7 +71,12 @@ import { DemoComponent } from './views/demo/demo.component';
     LoginComponent,
     
     LoginNewComponent,
-    DemoComponent
+    DemoComponent,
+    EmployeeComponent,
+    DesignationComponent,
+    DepartmentComponent,
+    ShiftComponent,
+    AdddepartmentComponent
   ],
   providers: [{
     provide: LocationStrategy,

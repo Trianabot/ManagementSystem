@@ -29,22 +29,41 @@ export interface NavData {
   wrapper?: NavWrapper;
 }
 
+// var role = localStorage.getItem('role');    
+// //console.log(role); 
+// this.role = role;
+// console.log(this.rule);
+
+
 export const navItems: NavData[] = [
   {
     name: 'Dashboard',
     url: '/dashboard',
-    icon: 'icon-speedometer',
-   
+    icon: 'icon-speedometer'
   },
-  
-  
-  
   {
     name: 'demo',
     url: '/demo',
     icon: 'icon-drop'
   },
-  
- 
-  
+  {
+    name:'Employee',
+    url:'/employee',
+    icon: 'icon-drop'
+  }, 
+  {
+    name : 'Designation',
+    url: '/designation',
+    icon: 'icon-drop'
+  },
+  {
+    name : 'Department',
+    url: '/department',
+    icon: 'icon-drop'
+  },
+  {
+    name : 'Shift',
+    url: '/shift',
+    icon: 'icon-drop'
+  } 
 ];

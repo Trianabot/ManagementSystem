@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DesignationService} from '../../core/designation.service';
 
 @Component({
   selector: 'app-designation',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesignationComponent implements OnInit {
 
-  constructor() { }
+  designationData: any [];
+  constructor(public designationService: DesignationService) { }
 
   ngOnInit() {
+      this.getDesignation();
+  }
+
+  getDesignation(){
+    this.designationService.getDesignation().subscribe(data =>{
+        //console.log(data);
+        this.designationData = data['data'];
+        //console.log(this.designationData);
+    });
   }
 
 }

@@ -17,11 +17,17 @@ export class AdddepartmentComponent implements OnInit {
   }
   
   addDepartment(form: NgForm){
-       // console.log(form.value);
     this.departmentSerice.addDepartment(form.value)
       .subscribe(res =>{
-          console.log("Data success");
+          this.resetForm(form);
       })
+  }
+
+resetForm(form: NgForm){
+  if(form){
+    form.reset();
+    this.departmentSerice.selectedDepartment= new Department();
+  }
 }
 
 }

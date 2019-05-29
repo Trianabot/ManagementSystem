@@ -8,7 +8,7 @@
             <button class="btn btn-primary" style="float:right"> <a [routerLink]="['/department']"> Departments </a> </button>
           </div>
           <div class="card-body">
-            <form #departmentForm="ngForm" (ngSubmit)="addDepartment(departmentForm)"> 
+            <form #departmentForm="ngForm" (ngSubmit)="addShift(departmentForm)"> 
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group">
@@ -22,7 +22,7 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="ccnumber"> Contact Person </label>
-                  <input type="text" class="form-control" id="contactPerson" name="contactPerson" #departmentName="ngModel"
+                  <input type="text" class="form-control" id="contactPerson" name="contactPerson" #contactPerson="ngModel"
                   [(ngModel)]="departmentSerice.selectedDepartment.contactPerson" placeholder="Contact Person name">
                 </div>
               </div>
@@ -31,7 +31,7 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="ccnumber">Phone</label>
-                    <input type="text" class="form-control" id="phone" name="phone" #departmentName="ngModel"
+                    <input type="text" class="form-control" id="phone" name="phone" #phone="ngModel"
                     [(ngModel)]="departmentSerice.selectedDepartment.phone" placeholder="Phone Number">
                   </div>
                 </div>
@@ -40,7 +40,7 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="ccnumber"> Email </label>
-                    <input type="text" class="form-control" id="email" name="email" #departmentName="ngModel"
+                    <input type="text" class="form-control" id="email" name="email" #email="ngModel"
                     [(ngModel)]="departmentSerice.selectedDepartment.email" placeholder="Email">
                   </div>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="ccnumber"> Username </label>
-                    <input type="text" class="form-control" id="username" id="username" name="username" #departmentName="ngModel"
+                    <input type="text" class="form-control" id="username" id="username" name="username" #username="ngModel"
                     [(ngModel)]="departmentSerice.selectedDepartment.username" placeholder="Username">
                   </div>
                 </div>
@@ -58,7 +58,7 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="ccnumber"> Password </label>
-                    <input type="password" class="form-control" id="password" name="password" #departmentName="ngModel"
+                    <input type="password" class="form-control" id="password" name="password" #password="ngModel"
                     [(ngModel)]="departmentSerice.selectedDepartment.password" placeholder="Password">
                   </div>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label for="ccnumber"> Role </label>
-                    <input type="text" class="form-control" id="role" name="role" #departmentName="ngModel"
+                    <input type="text" class="form-control" id="role" name="role" #role="ngModel"
                     [(ngModel)]="departmentSerice.selectedDepartment.role" placeholder="Role">
                   </div>
                 </div>

@@ -71,11 +71,6 @@ export class DefaultLayoutComponent implements OnInit, OnDestroy {
           icon: 'icon-speedometer'
         },
         {
-          name: 'demo',
-          url: '/demo',
-          icon: 'icon-drop'
-        },
-        {
           name: 'Employee',
           url: '/employee',
           icon: 'icon-drop'
@@ -85,18 +80,14 @@ export class DefaultLayoutComponent implements OnInit, OnDestroy {
           url: '/designation',
           icon: 'icon-drop'
         },
-        {
-          name: 'Department',
-          url: '/department',
-          icon: 'icon-drop'
-        },
+       
         {
           name: 'Shift',
           url: '/shift',
           icon: 'icon-drop'
         }
       ];
-    } else {
+    } else if(this.role == 'admin'){
       this.navItems = [
         {
           name: 'Dashboard',
@@ -104,10 +95,10 @@ export class DefaultLayoutComponent implements OnInit, OnDestroy {
           icon: 'icon-speedometer'
         },
         {
-          name: 'demo',
-          url: '/demo',
+          name: 'Department',
+          url: '/department',
           icon: 'icon-drop'
-        }
+        },
       ]
     }
 

@@ -1,0 +1,157 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="card">
+
+        <div class="card-header">
+          <strong>Add Employee</strong>
+          <small>Form</small>
+          <button class="btn btn-primary" style="float:right"> <a [routerLink]="['/employee']"> Employees </a> </button>
+        </div>
+
+
+        <div class="card-body">
+          <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)"> 
+
+          <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4">
+                  <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <label for="name">Employee Id</label>
+                          <input type="text" class="form-control" id="employeeId" name="employeeId" #departmentName="ngModel"
+                          [(ngModel)]="employeeService.selectedEmployee.employeeId" placeholder="Enter employee Id">
+                        </div>
+                      </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <label for="ccnumber"> Employee Name </label>
+                          <input type="text" class="form-control" id="employeeName" name="employeeName" #contactPerson="ngModel"
+                          [(ngModel)]="employeeService.selectedEmployee.employeeName" placeholder="Enter employee name">
+                        </div>
+                      </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="ccnumber">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" #phone="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone Number">
+                          </div>
+                        </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="ccnumber"> Email </label>
+                            <input type="text" class="form-control" id="email" name="email" #email="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.email" placeholder="Email">
+                          </div>
+                        </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="ccnumber"> Username </label>
+                            <input type="text" class="form-control" id="username" id="username" name="username" #username="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.username" placeholder="Username">
+                          </div>
+                        </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="ccnumber"> Password </label>
+                            <input type="password" class="form-control" id="password" name="password" #password="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.password" placeholder="Password">
+                          </div>
+                        </div>
+                    </div><!--/.row-->
+                   
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4">
+                  <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <label for="name">Designation</label>
+                            <select class="form-control">
+                                <option *ngFor="let desigation of designationData; let i=index" >{{desigation.designationName}}</option>
+                            </select>
+                        </div>
+                      </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="form-group">
+                          <label for="ccnumber"> Shift Timing </label>
+                          <select class="form-control">
+                              <option *ngFor="let shift of shiftsData">{{shift.shiftName}}</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="ccnumber">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" #phone="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone Number">
+                          </div>
+                        </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="ccnumber"> Email </label>
+                            <input type="text" class="form-control" id="email" name="email" #email="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.email" placeholder="Email">
+                          </div>
+                        </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="ccnumber"> Username </label>
+                            <input type="text" class="form-control" id="username" id="username" name="username" #username="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.username" placeholder="Username">
+                          </div>
+                        </div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label for="ccnumber"> Password </label>
+                            <input type="password" class="form-control" id="password" name="password" #password="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.password" placeholder="Password">
+                          </div>
+                        </div>
+                    </div><!--/.row-->
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                  
+                </div>
+          </div>
+
+
+      
+          <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input type="submit" class="btn btn-success" value="Submit">
+                </div>
+              </div>
+          </div><!--/.row-->
+        </form>                       
+        </div>
+      </div>
+    </div><!--/.col-->
+
+    <div class="col-sm-6">
+
+    </div>
+  
+  </div><!--/.row-->
+</div>

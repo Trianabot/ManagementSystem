@@ -7,19 +7,60 @@
               <i class="fa fa-align-justify"></i> Department List
               <button class="btn btn-primary" style="float:right"> <a [routerLink]="['/department/adddepartment']"> Add Department </a> </button>
           </div>
-        <!-- <div class="row">
-          <div class="col-xs-12 col-md-6">
-              <div class="card-header">
-                  <i class="fa fa-align-justify"></i> Department List
-                </div>
-          </div>
-          <div class="col-xs-12 col-md-6 text-right">
-              <div class="card-header">
-              <button> Add Department </button>
+      
+        <div *ngIf="showDepartment"> 
+        <div class="card-body">
+          <form #departmentForm="ngForm" (ngSubmit)="updateDepartment(departmentForm.value)"> 
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="name">Department Name</label>
+                <input type="text" class="form-control" id="departmentName" name="departmentName" #departmentName="ngModel"
+                [(ngModel)]="getdeptName">
               </div>
             </div>
-        </div> -->
-       
+          </div><!--/.row-->
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="ccnumber"> Contact Person </label>
+                <input type="text" class="form-control" id="contactPerson" name="contactPerson" #contactPerson="ngModel"
+                [(ngModel)]="getdeptContact">
+              </div>
+            </div>
+          </div><!--/.row-->
+          <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber">Phone</label>
+                  <input type="text" class="form-control" id="phone" name="phone" #phone="ngModel"
+                  [(ngModel)]="getdeptPhone" placeholder="Phone Number">
+                </div>
+              </div>
+          </div><!--/.row-->
+          <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="ccnumber"> Email </label>
+                  <input type="text" class="form-control" id="email" name="email" #email="ngModel"
+                  [(ngModel)]="getdeptEmail" placeholder="Email">
+                </div>
+              </div>
+          </div><!--/.row-->
+          
+          <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <input type="submit" class="btn btn-success" value="Submit">
+                </div>
+              </div>
+          </div><!--/.row-->
+        </form>                       
+        </div>
+      </div>
+
+        
+
         <div class="card-body">
           <table class="table table-bordered table-striped table-sm">
             <thead>
@@ -39,10 +80,17 @@
                 <td>{{department.contactPerson}}</td>
                 <td>{{department.email}}</td>
                 <td>{{department.role}}</td>
-                <td> 
-                    <a href="">Edit</a>
-                    <a href=""> Delete </a>
-                  </td>
+                <td>
+                    <tr>
+                      <td (click)=getDepartment(department)> 
+                        Edit                   
+                      </td>
+                      <td (click)="deleteDepartment(department)">
+                        Delete
+                      </td>
+                    </tr>
+                </td>
+               
               </tr>
             </tbody>
           </table>

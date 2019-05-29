@@ -28,14 +28,17 @@ export class LoginNewComponent implements OnInit {
         username : this.loginForm.value.username,
         password:this.loginForm.value.password,
         }
+        //console.log(loginData);
         if(this.loginForm.value.username =="" || this.loginForm.value ==""){
           alert("Please enter user name and password")
         }
         else if(this.loginForm.value.username !="" || this.loginForm.value !=""){
         this.authService.login(loginData).subscribe(data =>{
+              //console.log(data);
               this.userdata = data['user'].role;
               localStorage.setItem('role',this.userdata);
-              this.router.navigate(['/dashboard'])
+              this.router.navigate(['/dashboard']);
+
           })
         }
         else {

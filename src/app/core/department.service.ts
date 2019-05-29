@@ -28,4 +28,26 @@ export class DepartmentService {
     return this.http.get(this.apiendpoint+"/hr/department");
   }
 
+  //Update department 
+  updateDepartment(obj){
+    let httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let options = {
+      headers: httpHeaders
+    };
+    return this.http.post(this.apiendpoint + "/hr/updatedepartment",JSON.stringify(obj),options);
+  }
+
+  //Delete Department
+  deleteDepartment(obj){
+    let httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let options = {
+      headers: httpHeaders
+    };
+    return this.http.post(this.apiendpoint + "/hr/deletedepartment",JSON.stringify(obj),options);
+  }
+
 }

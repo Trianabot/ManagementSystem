@@ -11,8 +11,9 @@ import {DesignationComponent} from './views/designation/designation.component';
 import {DepartmentComponent} from './views/department/department.component';
 import {ShiftComponent} from './views/shift/shift.component';
 import {AdddepartmentComponent} from './views/department/adddepartment/adddepartment.component'
-
-
+import {AddshiftComponent} from './views/shift/addshift/addshift.component';
+import {AddemployeeComponent} from './views/employee/addemployee/addemployee.component';
+import {AdddesignationComponent} from './views/designation/adddesignation/adddesignation.component';
 export const routes: Routes = [
  
 
@@ -58,9 +59,22 @@ export const routes: Routes = [
         component:ShiftComponent
       },
       {
+        path:'shift/addshift',
+        component:AddshiftComponent
+      },
+      {
         path: 'department/adddepartment',
         component:AdddepartmentComponent
+      },
+      {
+        path: 'employee/addemployee',
+        component: AddemployeeComponent
+      }, 
+      {
+        path:'designation/adddesignation',
+        component: AdddesignationComponent
       }
+
     ]
   },
   

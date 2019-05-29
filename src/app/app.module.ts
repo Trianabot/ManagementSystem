@@ -46,6 +46,9 @@ import { DesignationComponent } from './views/designation/designation.component'
 import { DepartmentComponent } from './views/department/department.component';
 import { ShiftComponent } from './views/shift/shift.component';
 import { AdddepartmentComponent } from './views/department/adddepartment/adddepartment.component';
+import { AddshiftComponent } from './views/shift/addshift/addshift.component';
+import { AddemployeeComponent } from './views/employee/addemployee/addemployee.component';
+import { AdddesignationComponent } from './views/designation/adddesignation/adddesignation.component';
 
 @NgModule({
   imports: [
@@ -76,7 +79,10 @@ import { AdddepartmentComponent } from './views/department/adddepartment/adddepa
     DesignationComponent,
     DepartmentComponent,
     ShiftComponent,
-    AdddepartmentComponent
+    AdddepartmentComponent,
+    AddshiftComponent,
+    AddemployeeComponent,
+    AdddesignationComponent
   ],
   providers: [{
     provide: LocationStrategy,

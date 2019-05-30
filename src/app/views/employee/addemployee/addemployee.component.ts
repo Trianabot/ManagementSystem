@@ -36,7 +36,7 @@ export class AddemployeeComponent implements OnInit {
           this.shiftsData = data['data'];
     });
   }
-  addDepartment(form: NgForm){
+  addEmployee(form: NgForm){
     this.employeeService.addEmployee(form.value)
       .subscribe(res =>{
           this.resetForm(form);

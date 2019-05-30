@@ -1,19 +1,15 @@
 <div class="animated fadeIn">
   <div class="row">
     <div class="col-sm-12">
-
       <div class="card">
-
         <div class="card-header">
           <strong>Add Employee</strong>
           <small>Form</small>
           <button class="btn btn-primary" style="float:right"> <a [routerLink]="['/employee']"> Employees </a> </button>
         </div>
 
-
         <div class="card-body">
-          <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)"> 
-
+          <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)" ngNativeValidate> 
           <div class="row">
               <div class="col-xs-12 col-sm-4 col-md-4">
                   <div class="row">
@@ -21,7 +17,11 @@
                         <div class="form-group">
                           <label for="name">Employee Id</label>
                           <input type="text" class="form-control" id="employeeId" name="employeeId" #departmentName="ngModel"
-                          [(ngModel)]="employeeService.selectedEmployee.employeeId" placeholder="Enter employee Id">
+                          [(ngModel)]="employeeService.selectedEmployee.employeeId" placeholder="Enter employee Id"
+                            required #employeeId="ngModel">
+                            <div [hidden]="employeeId.value || employeeId.untouched" class="alert alert-danger">
+                                Enter the employee Id
+                            </div>
                         </div>
                       </div>
                     </div><!--/.row-->
@@ -30,7 +30,11 @@
                         <div class="form-group">
                           <label for="ccnumber"> Employee Name </label>
                           <input type="text" class="form-control" id="employeeName" name="employeeName" #contactPerson="ngModel"
-                          [(ngModel)]="employeeService.selectedEmployee.employeeName" placeholder="Enter employee name">
+                          [(ngModel)]="employeeService.selectedEmployee.employeeName" placeholder="Enter employee name"
+                          required #employeeName="ngModel">
+                          <div [hidden]="employeeName.value || employeeName.untouched" class="alert alert-danger">
+                              Enter the name
+                          </div>
                         </div>
                       </div>
                     </div><!--/.row-->
@@ -39,7 +43,11 @@
                           <div class="form-group">
                             <label for="ccnumber">Phone</label>
                             <input type="text" class="form-control" id="phone" name="phone" #phone="ngModel"
-                            [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone Number">
+                            [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone Number"
+                            required #phone="ngModel">
+                            <div [hidden]="phone.value || phone.untouched" class="alert alert-danger">
+                                Enter the phone
+                            </div>
                           </div>
                         </div>
                     </div><!--/.row-->
@@ -48,7 +56,11 @@
                           <div class="form-group">
                             <label for="ccnumber"> Email </label>
                             <input type="text" class="form-control" id="email" name="email" #email="ngModel"
-                            [(ngModel)]="employeeService.selectedEmployee.email" placeholder="Email">
+                            [(ngModel)]="employeeService.selectedEmployee.email" placeholder="Email"
+                            required #email="ngModel">
+                            <div [hidden]="email.value || email.untouched" class="alert alert-danger">
+                                Enter the email
+                            </div>
                           </div>
                         </div>
                     </div><!--/.row-->
@@ -57,7 +69,11 @@
                           <div class="form-group">
                             <label for="ccnumber"> Username </label>
                             <input type="text" class="form-control" id="username" id="username" name="username" #username="ngModel"
-                            [(ngModel)]="employeeService.selectedEmployee.username" placeholder="Username">
+                            [(ngModel)]="employeeService.selectedEmployee.username" placeholder="Username"
+                            required #username="ngModel">
+                            <div [hidden]="username.value || username.untouched" class="alert alert-danger">
+                                Enter the username
+                            </div>
                           </div>
                         </div>
                     </div><!--/.row-->
@@ -66,7 +82,11 @@
                           <div class="form-group">
                             <label for="ccnumber"> Password </label>
                             <input type="password" class="form-control" id="password" name="password" #password="ngModel"
-                            [(ngModel)]="employeeService.selectedEmployee.password" placeholder="Password">
+                            [(ngModel)]="employeeService.selectedEmployee.password" placeholder="Password"
+                            required #password="ngModel">
+                            <div [hidden]="password.value || password.untouched" class="alert alert-danger">
+                                Enter the password
+                            </div>
                           </div>
                         </div>
                     </div><!--/.row-->
@@ -77,7 +97,7 @@
                       <div class="col-sm-12">
                         <div class="form-group">
                           <label for="name">Designation</label>
-                            <select class="form-control">
+                            <select class="form-control" name="designation">
                                 <option *ngFor="let desigation of designationData; let i=index" >{{desigation.designationName}}</option>
                             </select>
                         </div>
@@ -87,7 +107,7 @@
                       <div class="col-sm-12">
                         <div class="form-group">
                           <label for="ccnumber"> Shift Timing </label>
-                          <select class="form-control">
+                          <select class="form-control" name="shift">
                               <option *ngFor="let shift of shiftsData">{{shift.shiftName}}</option>
                           </select>
                         </div>
@@ -96,36 +116,48 @@
                     <div class="row">
                         <div class="col-sm-12">
                           <div class="form-group">
-                            <label for="ccnumber">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" #phone="ngModel"
-                            [(ngModel)]="employeeService.selectedEmployee.phone" placeholder="Phone Number">
+                            <label for="dateJoin">Date of Joining</label>
+                            <input type="text" class="form-control" id="dateJoin" name="dateJoin" #dateJoin="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.dateJoin" placeholder="Phone Number">
                           </div>
                         </div>
                     </div><!--/.row-->
                     <div class="row">
                         <div class="col-sm-12">
                           <div class="form-group">
-                            <label for="ccnumber"> Email </label>
-                            <input type="text" class="form-control" id="email" name="email" #email="ngModel"
-                            [(ngModel)]="employeeService.selectedEmployee.email" placeholder="Email">
+                            <label for="salary"> Salary </label>
+                            <input type="text" class="form-control" id="salary" name="salary" #salary="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="salary"
+                            required #salary="ngModel">
+                            <div [hidden]="salary.value || salary.untouched" class="alert alert-danger">
+                                Enter the salary
+                            </div>
                           </div>
                         </div>
                     </div><!--/.row-->
                     <div class="row">
                         <div class="col-sm-12">
                           <div class="form-group">
-                            <label for="ccnumber"> Username </label>
-                            <input type="text" class="form-control" id="username" id="username" name="username" #username="ngModel"
-                            [(ngModel)]="employeeService.selectedEmployee.username" placeholder="Username">
+                            <label for="workExperience"> Work Experience </label>
+                            <input type="text" class="form-control"  id="workExperience" name="workExperience" #workExperience="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.workExperience" placeholder="Work Experience"
+                            required #workExperience="ngModel">
+                            <div [hidden]="workExperience.value || workExperience.untouched" class="alert alert-danger">
+                                Enter the work experience
+                            </div>
                           </div>
                         </div>
                     </div><!--/.row-->
                     <div class="row">
                         <div class="col-sm-12">
                           <div class="form-group">
-                            <label for="ccnumber"> Password </label>
-                            <input type="password" class="form-control" id="password" name="password" #password="ngModel"
-                            [(ngModel)]="employeeService.selectedEmployee.password" placeholder="Password">
+                            <label for="reporting"> Reporting Person </label>
+                            <input type="text" class="form-control" id="reporting" name="reporting" #reporting="ngModel"
+                            [(ngModel)]="employeeService.selectedEmployee.reporting" placeholder="Reporting"
+                            required #reporting="ngModel">
+                            <div [hidden]="reporting.value || reporting.untouched" class="alert alert-danger">
+                                Enter the reporting
+                            </div>
                           </div>
                         </div>
                     </div><!--/.row-->

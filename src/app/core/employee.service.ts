@@ -23,7 +23,7 @@ export class EmployeeService {
 
   //Add Department
   addEmployee(employee:Employee){
-    return this.http.post(this.apiendpoint+"/hr/addshiftTime",employee);
+    return this.http.post(this.apiendpoint+"/hr/addemployee",employee);
   }
 
     //List Departmentts
